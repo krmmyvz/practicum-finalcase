@@ -5,7 +5,23 @@ import Home from "./content/Home/Home";
 import Header from "./content/Header/Header";
 import Results from "./content/Results/Results";
 import Details from "./content/Details/Details";
+import { useEffect } from "react";
 function App() {
+  // appHeight() fonksiyonu List içindeki bileşenin yüksekliğini ayarlayacak state'i tanımlar
+  const appHeight = () => {
+    const doc = document.documentElement;
+    doc.style.setProperty("--app-height", `${window.innerHeight}px`);
+  };
+  // useEffect fonksiyonu bileşen ilk render edildiğinde appHeight() fonksiyonunu çağırır
+
+  useEffect(() => {
+    window.addEventListener("resize", appHeight);
+    appHeight();
+    return () => {
+      window.removeEventListener("resize", appHeight);
+    };
+  }, []); //=> useEffect fonksiyonu sadece bir kez çağırır
+
   return (
     <div className="App">
       <Header />

@@ -10,52 +10,28 @@
   gap: 20px;
 }
 .card {
-  background-color: rgba(0, 0, 0, 0.8);
   border-radius: 10px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(1px);
   padding: 20px 20px 60px 20px;
-  overflow: hidden;
-  position: relative;
   display: flex;
+  height: 100%;
+  padding-top: 110px;
   flex-direction: column;
-  text-align: center;
   align-items: center;
+  justify-content: end;
 }
 
 .card h4 {
   font-size: 20px;
   color: #fff;
-  height: 30px;
-  margin: 10px;
+  height: 20px;
+  margin: 0px;
 }
 
 .card p {
   font-size: 18px;
   color: #f7f7f7;
-  margin-bottom: 10px;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  left: -50px;
-  right: -50px;
-  bottom: -50px;
-  background-size: 35px 35px;
-  background-position: center;
-  z-index: -1;
-}
-
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
-}
-
-.card:hover .more-info {
-  opacity: 1;
+  margin: 5px;
 }
 
 .more-info {
@@ -63,12 +39,70 @@
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
   background-color: #f00;
   color: #fff;
   border: none;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.wrapper {
+  height: 400px;
+  background: url(https://res.cloudinary.com/muhammederdem/image/upload/v1536405234/starwars/death_star.jpg)
+    center no-repeat;
+  background-size: cover;
+  display: flex;
+  border-radius: 24px;
+}
+.content {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: auto;
+  margin-top: 0px;
+}
+
+.bg-shape {
+  background: linear-gradient(rgba(56, 204, 204, 0.7), rgba(25, 167, 203, 0.7));
+  box-shadow: 0px 30px 139px 0px rgba(10, 22, 31, 0.26);
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  font-family: "Starjedi";
+}
+.bg-shape div {
+  font-size: 100%;
+}
+
+.product-img {
+  max-width: 200px;
+  height: 250px;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 0px;
+  z-index: 2;
+
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.product-img img {
+  object-fit: contain;
+  object-position: center right;
+  max-width: 50%;
+  -webkit-filter: invert(70%); /* Safari/Chrome */
+  filter: invert(70%);
 }
