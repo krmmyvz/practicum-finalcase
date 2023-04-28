@@ -1,14 +1,19 @@
 # Starship Explorer (Practicum Final Case)
 Patika.dev &amp; FMSS Bilişim Front-end Practicum Final Case
-Patika.dev linkim: "https://app.patika.dev/keremyvz"
+My Patika.dev Profile: "https://app.patika.dev/keremyvz"
 
 ## Description
 This React.js application allows you to search for starship information using the Star Wars API and access detailed information. The application uses React Router, Axios, Context API, and CSS features
 
-## Uygulama Bağlantısı
+## Application Link
 
-Uygulama, Vercel üzerinde canlı olarak yayınlanmaktadır. Aşağıdaki link üzerinden erişebilirsiniz:
-[https://practicum-finalcase.vercel.app/](https://practicum-finalcase.vercel.app/)
+The application is live on Vercel. You can access it via the link below:
+[https://practicum-finalcase.vercel.app/](https://practicum-finalcase.vercel.app/) 
+
+
+![Ekran Görüntüsü](https://github.com/krmmyvz/practicum-finalcase/blob/main/screenshots/screenshot-home.png)
+![Ekran Görüntüsü](https://github.com/krmmyvz/practicum-finalcase/blob/main/screenshots/screenshot-search2.png)
+![Ekran Görüntüsü](https://github.com/krmmyvz/practicum-finalcase/blob/main/screenshots/screenshot-details.png)
 
 ## Getting Started
 To run this application, you need to have Node.js installed on your computer. If Node.js is not installed, you can download it from [nodejs.org](https://nodejs.org).
