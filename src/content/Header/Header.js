@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Logo from "../../assets/logo.png";
 import "./Header.css";
 
+// Component for displaying a Header
 function Header() {
   return (
     <header>

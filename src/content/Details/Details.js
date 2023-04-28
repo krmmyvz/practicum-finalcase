@@ -7,14 +7,20 @@ import Starship from "../../assets/galactic.png"
 import NotFound from "../NotFound/NotFound";
 
 const Details = () => {
+  // Get the slug parameter from the URL
   const { slug } = useParams();
   let navigate = useNavigate();
+
+  // Access the necessary data from the API context
   const { jsonData, fetchData, loading } = useContext(ApiContext);
+
+  // Convert the slug into a readable string
   const converted = slug
     .replace(/^[a-z]|(-[a-z])/g, (match) => match.replace("-", " "))
     .split("-")
     .join(" ");
 
+    // Fetch data from the API only if there is no data in the context
   useEffect(() => {
     if (jsonData.length === 0) {
       fetchData(converted);
@@ -24,9 +30,11 @@ const Details = () => {
 
   return (
     <>
+    {/* Display the Loading component if the data is being loaded */}
       {loading ? (
         <Loading />
       ) : (
+         // Otherwise, display the matched starship details in a card
         <div className="details-container">
           {jsonData && jsonData.length > 0 ? (
             <>

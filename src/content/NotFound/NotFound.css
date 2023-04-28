@@ -1,6 +1,8 @@
 #notfound{
     font-family: "Starjedi";
+    text-align: center;
 }
 #notfound > h1{
     font-size: 64px;
+    color : #fff;
 }

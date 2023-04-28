@@ -3,6 +3,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./Footer.css";
 
+// Component for displaying a Footer
 function Footer() {
   return (
     <div className="footer-container">

@@ -1,6 +1,7 @@
 import React from "react";
 import "./Loading.css";
 
+// Component for displaying a Loading page
 function Loading() {
   return (
     <div className="socket">
