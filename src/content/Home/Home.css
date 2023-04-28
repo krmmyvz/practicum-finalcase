@@ -1,3 +1,9 @@
+.home{
+flex-grow: 1; 
+min-height:var(--app-height);
+display: flex;
+align-items: center;
+}
 .container {
   background-color: rgba(255, 255, 255, 0.15);
   border-radius: 20px;
@@ -9,14 +15,15 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-h1 {
-  margin: 20px 100px;
+.container h1 {
+  font-family: "Starjedi";
+  margin: 20px;
   color: #fff;
-  text-transform: uppercase;
   text-align: center;
 }
 
 p {
+  padding: 0 20px;
   color: #fff;
   text-align: center;
 }
@@ -54,9 +61,11 @@ p {
     align-items: center;
     height: auto;
     padding: 10px;
+    margin-top:20px;
   }
   .search {
     width: 100%;
+    text-align: center;
   }
 
   select {

@@ -6,6 +6,7 @@ import Header from "./content/Header/Header";
 import Results from "./content/Results/Results";
 import Details from "./content/Details/Details";
 import { useEffect } from "react";
+import Footer from "./content/Footer/Footer";
 function App() {
   // appHeight() fonksiyonu List içindeki bileşenin yüksekliğini ayarlayacak state'i tanımlar
   const appHeight = () => {
@@ -23,6 +24,7 @@ function App() {
   }, []); //=> useEffect fonksiyonu sadece bir kez çağırır
 
   return (
+    <>
     <div className="App">
       <Header />
       <Routes>
@@ -33,6 +35,9 @@ function App() {
         <Route exact path="*" Component={NotFound} />
       </Routes>
     </div>
+    <Footer/>
+    </>
+
   );
 }
 

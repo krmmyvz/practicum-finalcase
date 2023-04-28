@@ -20,11 +20,10 @@ function Home() {
   };
 
   return (
-    <>
+    <div className="home">
       <div className="container">
         <h1>The Galaxy is in Your Hands </h1>
-        <p>Search</p>
-        <p>From all SEVEN Star Wars films</p>
+        <p>Here you can search for spacecraft from the Star Wars universe and get detailed information.</p>
         <Formik initialValues={{ search: "" }} onSubmit={handleFormSubmit}>
           {() => (
             <Form>
@@ -44,7 +43,7 @@ function Home() {
           )}
         </Formik>
       </div>
-    </>
+    </div>
   );
 }
 

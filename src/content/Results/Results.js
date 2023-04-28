@@ -10,14 +10,15 @@ const Results = () => {
   const search = searchParams.get("search") || "";
   const navigate = useNavigate();
 
-  const { jsonData, loadMoreJsonData, fetchData, loading } =
+  const { jsonData, loadMoreJsonData, fetchData, loading} =
     useContext(ApiContext);
 
   useEffect(() => {
     fetchData(search);
+    // eslint-disable-next-line
   }, []);
-
   return (
+    
     <>
       {loading ? (
         <Loading />
@@ -30,52 +31,42 @@ const Results = () => {
                   <div className="bg-shape">
                     <div className="title">{data.name}</div>
                   </div>
-                  <div class="product-img">
-                    <img src={Starship} alt="star wars" />
-                  </div>
+
                   <div className="card" key={data.name}>
-                    <h4>{data.name}</h4>
-                    <p>Model: {data.model}</p>
-                    <p>Manufacturer: {data.manufacturer}</p>
-                    <p>Hyperdrive Rating: {data.hyperdrive_rating}</p>
-                    <button
-                      className="more-info"
-                      onClick={() => {
-                        navigate(`/starships/${data.slug}`);
-                      }}
-                    >
-                      Daha Fazla Bilgi
-                    </button>
+                    <img src={Starship} alt="star wars" />
+                    <p>
+                      <span>Model: </span>
+                      {data.model}
+                    </p>
+                    <p>
+                      <span>Manufacturer: </span>
+                      {data.manufacturer}
+                    </p>
+                    <p>
+                      <span>Hyperdrive Rating: </span>
+                      {data.hyperdrive_rating}
+                    </p>
+                    <div className="button-wrapper">
+                      <button
+                        className="more-info"
+                        onClick={() => {
+                          navigate(`/starships/${data.slug}`);
+                        }}
+                      >
+                        Details
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
+          {jsonData.length > 0 && jsonData.length % 10 === 0 && (
+            <button className="load-more" onClick={loadMoreJsonData}>
+              Load More
+            </button>
+          )}
         </div>
-
-        // <div className="container2">
-        //   <div className="card-grid">
-        //     {jsonData.map((data) => (
-        //       <div className="card" key={data.name}>
-        //         <h4>{data.name}</h4>
-        //         <p>Model: {data.model}</p>
-        //         <p>Manufacturer: {data.manufacturer}</p>
-        //         <p>Hyperdrive Rating: {data.hyperdrive_rating}</p>
-        //         <button
-        //           className="more-info"
-        //           onClick={() => {
-        //             navigate(`/starships/${data.slug}`);
-        //           }}
-        //         >
-        //           Daha Fazla Bilgi
-        //         </button>
-        //       </div>
-        //     ))}
-        //   </div>
-        // </div>
-      )}
-      {jsonData.length > 0 && jsonData.length % 10 === 0 && (
-        <button onClick={loadMoreJsonData}>Daha Fazla Yükle</button>
       )}
     </>
   );
