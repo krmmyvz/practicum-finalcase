@@ -29,9 +29,13 @@ const Results = () => {
       {loading ? (
         <Loading />
       ) : (
+        
         // Otherwise, display the starship data in cards
         <div className="container2">
           <div className="card-grid">
+          {jsonData.length === 0 && (
+          <div className="bg-shape"> No results found matching with "{search}"</div>
+        )}
             {jsonData.map((data) => (
               <div className="wrapper">
                 <div className="content">
